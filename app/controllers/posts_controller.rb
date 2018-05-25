@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.with_attached_image
+    @posts = Post.all
   end
 
   # GET /posts/1
