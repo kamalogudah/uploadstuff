@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  has_one_attached :image
-  scope :with_eager_loaded_image, -> { eager_load(image_attachment: :blob) }
-  scope :with_preloaded_image, -> { preload(image_attachment: :blob) }
+  has_many_attached :images
+  # Note that implicit association has a plural form in this case
+  scope :with_eager_loaded_images, -> { eager_load(images_attachments: :blob) }
 end
